@@ -1,0 +1,7 @@
+for DIR in ./*; do
+    if [ -d "$DIR" ]; then
+        cd "$DIR"
+        grep -iHR *.log  | grep "foo" 
+        cd ..
+    fi
+done
