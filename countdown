@@ -1,0 +1,14 @@
+#countdown 
+
+countdown() {
+        message=" Counting down from 10 before proceeding ";
+        clear 
+        echo -n "$message"
+        l=${#message}
+        l=$(( l+$col ))
+        for i in {10..1}
+        do
+                echo -n "Countdown complete beginning making backup of  log stage";
+                sleep 1;
+        done
+}
