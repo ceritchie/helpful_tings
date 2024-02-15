@@ -1,13 +1,28 @@
+
+#!/bin/bash
+
 file=$1 
 
 
-while read -r ip; do 
+while read -r ip address; do 
 
 
-if  [ \( -z "${ip}") -o  \( -z "${address}") ]
+if  [ \( -z "${ip}"\) -o \( -z "${address}"\) ]
 then 
     continue 
     fi 
 
-
     cat << EOF 
+
+#EXAMPLE TEMPLATE TO LOOP FROM THISTEMPLATE TO  >> NEW_FILE.SH
+ 
+<host>
+      <host>${ip} ${address}</host>
+      <name>${ip} ${address}</name>
+      <description />
+
+
+
+EOF
+
+done< <(cat ${file})
