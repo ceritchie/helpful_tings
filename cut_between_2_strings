@@ -1,0 +1,8 @@
+# cut between 2 strings output in a log  
+
+
+cat /some/directory/file.log  |  grep  "foo_bar"  |  sed -e 's/.*foo\(.*\)bar.*/\1/'
+
+or 
+
+cat /some/directory/file.log |  grep -Po '(?<=(foo )).*(?= bar)' 
