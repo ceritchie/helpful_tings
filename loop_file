@@ -1,0 +1,13 @@
+file=$1 
+
+
+while read -r ip; do 
+
+
+if  [ \( -z "${ip}") -o  \( -z "${address}") ]
+then 
+    continue 
+    fi 
+
+
+    cat << EOF 
