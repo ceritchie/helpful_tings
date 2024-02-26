@@ -1,0 +1,28 @@
+
+NETWORK SCRIPTS  
+
+
+
+#ping 25 times over a 1/4 second interval 
+
+   ping -c 25 -i .25  $HOST 
+
+
+
+# ping and show route cancel in  10 seconds   
+
+ping -R  $HOST -w 10
+
+
+# ping a host  & make a log in  bg while running loop in fg  
+
+fpd=/$foo/$bar 
+
+while sleep 1;do echo "$(date +%d-%m-%y-%T) $(ping -c 1 $HOST | gawk 'FNR==2{print "Response from:",$4,$8}')" | tee -a /$foo/$bar/ping.log;done
+
+
+
+#ping host and get local timestamp back from network 
+
+
+ping $HOST| perl -nle 'use Time::Piece; BEGIN {$|++} print localtime->datetime, " ", $_'
