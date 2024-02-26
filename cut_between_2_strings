@@ -1,8 +1,20 @@
 # cut between 2 strings output in a log  
 
 
+#SED 
 cat /some/directory/file.log  |  grep  "foo_bar"  |  sed -e 's/.*foo\(.*\)bar.*/\1/'
 
 or 
 
+#PERL 
 cat /some/directory/file.log |  grep -Po '(?<=(foo )).*(?= bar)' 
+
+
+
+#AWK  
+awk '/'foo'/{flag=1;next}/'bar'/{flag=0}flag' output.txt  
+
+
+#output  
+# 2 cuts example for  2 regex 
+paste  file1.txt  file2.txt  >> output.txt  
